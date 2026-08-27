@@ -15,17 +15,17 @@ class StudyResult extends Model
         'gpa',
     ];
 
-    public function student():BelongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }
 
-    public function academicYear():BelongsTo
+    public function academicYear(): BelongsTo
     {
         return $this->belongsTo(AcademicYear::class);
     }
 
-    public function grades():HasMany
+    public function grades(): HasMany
     {
         return $this->hasMany(StudyResultGrade::class);
     }

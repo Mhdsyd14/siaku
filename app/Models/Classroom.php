@@ -14,35 +14,35 @@ class Classroom extends Model
         'department_id',
         'academic_year_id',
         'name',
-        'slug'
+        'slug',
     ];
 
-    public function faculty():BelongsTo
+    public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class);
     }
 
-    public function department():BelongsTo
+    public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
 
-    public function academicYear():BelongsTo
+    public function academicYear(): BelongsTo
     {
         return $this->belongsTo(AcademicYear::class);
     }
 
-    public function students():HasMany
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class);
     }
 
-    public function schedules():HasMany
+    public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }
 
-    public function courses():HasManyThrough
+    public function courses(): HasManyThrough
     {
         return $this->hasManyThrough(
             Course::class,

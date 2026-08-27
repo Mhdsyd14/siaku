@@ -13,13 +13,13 @@ class AcademicYear extends Model
         'start_date',
         'end_date',
         'semester',
-        'is_active'
+        'is_active',
     ];
 
-    protected function casts():array
+    protected function casts(): array
     {
         return [
-            'semester' => AcademicYearSemester::class
+            'semester' => AcademicYearSemester::class,
         ];
     }
 }

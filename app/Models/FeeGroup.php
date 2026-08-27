@@ -8,6 +8,6 @@ class FeeGroup extends Model
 {
     protected $fillable = [
         'group',
-        'amount'
+        'amount',
     ];
 }

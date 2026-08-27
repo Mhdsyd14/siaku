@@ -23,12 +23,12 @@ class Faculty extends Model
         );
     }
 
-    public function departments():HasMany
+    public function departments(): HasMany
     {
         return $this->hasMany(Department::class);
     }
 
-    public function students():HasMany
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class);
     }

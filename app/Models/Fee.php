@@ -16,17 +16,17 @@ class Fee extends Model
         'status',
     ];
 
-    public function student():BelongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }
 
-    public function feeGroup():BelongsTo
+    public function feeGroup(): BelongsTo
     {
         return $this->belongsTo(FeeGroup::class);
     }
-    
-    public function academicYear():BelongsTo
+
+    public function academicYear(): BelongsTo
     {
         return $this->belongsTo(AcademicYear::class);
     }

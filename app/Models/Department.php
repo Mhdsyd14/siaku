@@ -12,20 +12,19 @@ class Department extends Model
         'faculty_id',
         'name',
         'code',
-        'slug'
+        'slug',
     ];
 
-    protected function code():Attribute
+    protected function code(): Attribute
     {
         return Attribute::make(
-            get:fn(string $value)=> strtoupper($value),
-            set:fn(string $value)=> strtolower($value),
+            get: fn (string $value) => strtoupper($value),
+            set: fn (string $value) => strtolower($value),
         );
     }
 
-    public function faculty():BelongsTo
+    public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class);
     }
-   
 }

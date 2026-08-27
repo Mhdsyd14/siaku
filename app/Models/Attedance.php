@@ -12,20 +12,20 @@ class Attedance extends Model
         'student_id',
         'classroom_id',
         'status',
-        'section'
+        'section',
     ];
 
-    public function course():BelongsTo
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }
 
-    public function student():BelongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }
 
-    public function classroom():BelongsTo
+    public function classroom(): BelongsTo
     {
         return $this->belongsTo(Classroom::class);
     }

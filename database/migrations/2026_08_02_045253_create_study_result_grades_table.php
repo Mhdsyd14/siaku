@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('study_result_id')->constrained()->cascadeOnDelete();
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
-            $table->char('letter',2);
+            $table->char('letter', 2);
             $table->decimal('weight_of_value', 5, 2)->default(0);
             $table->decimal('grade', 5, 2);
             $table->timestamps();

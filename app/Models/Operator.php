@@ -11,20 +11,20 @@ class Operator extends Model
         'user_id',
         'faculty_id',
         'department_id',
-        'employee_number'
+        'employee_number',
     ];
 
-    public function user():BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function faculty():BelongsTo
+    public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class);
     }
 
-    public function department():BelongsTo
+    public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }

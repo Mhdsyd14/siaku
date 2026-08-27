@@ -15,12 +15,12 @@ class StudyResultGrade extends Model
         'grade',
     ];
 
-    public function studyResult():BelongsTo
+    public function studyResult(): BelongsTo
     {
         return $this->belongsTo(StudyResult::class);
     }
 
-    public function course():BelongsTo
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }

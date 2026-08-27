@@ -16,40 +16,40 @@ class Course extends Model
         'code',
         'name',
         'credit',
-        'semester'
+        'semester',
     ];
 
-    public function faculty():BelongsTo
+    public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class);
     }
 
-    public function department():BelongsTo
+    public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
 
-    public function teacher():BelongsTo
+    public function teacher(): BelongsTo
     {
         return $this->belongsTo(Teacher::class);
     }
 
-    public function academicYear():BelongsTo
+    public function academicYear(): BelongsTo
     {
         return $this->belongsTo(AcademicYear::class);
     }
 
-    public function schedules():HasMany
+    public function schedules(): HasMany
     {
         return $this->hasMany(Schedule::class);
     }
 
-    public function attendances():HasMany
+    public function attendances(): HasMany
     {
         return $this->hasMany(Attedance::class);
     }
 
-    public function grades():HasMany
+    public function grades(): HasMany
     {
         return $this->hasMany(Grade::class);
     }

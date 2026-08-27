@@ -18,42 +18,42 @@ class Schedule extends Model
         'start_time',
         'end_time',
         'day_of_week',
-        'quote'
+        'quote',
     ];
 
-    protected function casts():array
+    protected function casts(): array
     {
         return [
             'day_of_week' => ScheduleDay::class,
         ];
     }
 
-    public function faculty():BelongsTo
+    public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class);
     }
 
-    public function department():BelongsTo
+    public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
 
-    public function course():BelongsTo
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }
 
-    public function classroom():BelongsTo
+    public function classroom(): BelongsTo
     {
         return $this->belongsTo(Classroom::class);
     }
 
-    public function academicYear():BelongsTo
+    public function academicYear(): BelongsTo
     {
         return $this->belongsTo(AcademicYear::class);
     }
 
-    public function studyPlans():BelongsToMany
+    public function studyPlans(): BelongsToMany
     {
         return $this->belongsToMany(StudyPlan::class, 'study_plan_schedule')->withTimestamps();
     }

@@ -9,12 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class StudyPlan extends Model
 {
-    protected $fillable = [
-        'student_id',
-        'academic_year_id',
-        'status',
-        'notes',
-    ];
+    protected $fillable = ['student_id', 'academic_year_id', 'status', 'notes'];
 
     protected function casts(): array
     {

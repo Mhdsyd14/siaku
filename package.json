@@ -5,11 +5,12 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "format": "prettier --write \"resources/**/*.{js,jsx,ts,tsx,css,vue,blade.php}\""
+        "format": "prettier --write \"resources/**/*.{js,jsx,ts,tsx,css,vue,blade.php}\" \"app/**/*.php\" \"routes/**/*.php\" \"database/**/*.php\""
     },
     "devDependencies": {
         "@headlessui/react": "^2.0.0",
         "@inertiajs/react": "^2.0.0",
+        "@prettier/plugin-php": "^0.26.0",
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/vite": "^4.3.3",
         "@vitejs/plugin-react": "^4.2.0",
@@ -18,7 +19,7 @@
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
         "postcss": "^8.4.31",
-        "prettier": "^3.9.6",
+        "prettier": "^3.9.10",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "tailwindcss": "^4.3.3",

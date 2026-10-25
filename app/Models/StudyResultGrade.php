@@ -7,13 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class StudyResultGrade extends Model
 {
-    protected $fillable = [
-        'study_result_id',
-        'course_id',
-        'letter',
-        'weight_of_value',
-        'grade',
-    ];
+    protected $fillable = ['study_result_id', 'course_id', 'letter', 'weight_of_value', 'grade'];
 
     public function studyResult(): BelongsTo
     {

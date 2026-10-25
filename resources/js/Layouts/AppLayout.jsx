@@ -1,19 +1,23 @@
 import { Toaster } from '@/Components/ui/toast';
-import { Transition ,Dialog} from '@headlessui/react';
+import { Transition, Dialog } from '@headlessui/react';
 import { Head, Link, usePage } from '@inertiajs/react';
 import { Fragment, useEffect, useState } from 'react';
 import { IconLayoutSidebar, IconX } from '@tabler/icons-react';
 import { Avatar, AvatarFallback } from '@/Components/ui/avatar';
 import { flashMessage } from '@/lib/utils';
 import { toast } from 'sonner';
+import Sidebar from './Partials/Sidebar';
+import SidebarResponsive from './Partials/SidebarResponsive';
 
 export default function AppLayout({ title, children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const { url } = usePage();
+    const auth = usePage().props.auth.user;
 
-    const flash = flashMessage(usePage())
-    useEffect(()=>{
-        if (flash && flash.message && flash.type === 'warning') toast[flash.type](flash.message)
-    })
+    const flash = flashMessage(usePage());
+    useEffect(() => {
+        if (flash && flash.message && flash.type === 'warning') toast[flash.type](flash.message);
+    });
     return (
         <>
             <Head title={title} />
@@ -63,8 +67,9 @@ export default function AppLayout({ title, children }) {
                                             </button>
                                         </div>
                                     </Transition.Child>
-                                    <div className="flex flex-col px-6 pb-2 overflow-y-auto grow gap-y-5 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-700">
+                                    <div className="flex flex-col px-6 pb-2 overflow-y-auto grow gap-y-5 bg-linear-to-b from-blue-500 via-blue-600 to-blue-700">
                                         {/* Sidebar Responsive */}
+                                        <SidebarResponsive auth={auth} url={url} />
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>
@@ -73,10 +78,11 @@ export default function AppLayout({ title, children }) {
                 </Transition.Root>
                 <div className=" hidden p-2.5 lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                     <div
-                        className="flex flex-col px-4 overflow-y-auto border grow gap-y-5 rounded-xl bg-gradient-to-b from-blue-500 via-blue-600
+                        className="flex flex-col px-4 overflow-y-auto border grow gap-y-5 rounded-xl bg-linear-to-b from-blue-500 via-blue-600
                     to-blue-700"
                     >
                         {/* Sideebar */}
+                        <Sidebar auth={auth} url={url} />
                     </div>
                 </div>
                 <div className="sticky top-0 z-40 flex items-center p-4 bg-white shadow-sm gap-x-6 sm:px-6 lg:hidden">

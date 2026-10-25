@@ -9,7 +9,7 @@ export default function Banner({ message }) {
             >
                 <p className="text-sm leading-6 text-white">
                     <Link href="#">
-                        <strong className="font-bold">Pengumuman</strong>
+                        <strong className="font-bold">Pengumuman </strong>
                         {message}
                     </Link>
                 </p>

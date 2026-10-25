@@ -2,7 +2,7 @@
 
 use App\Models\AcademicYear;
 
-if (! function_exists('flashMessage')) {
+if (!function_exists('flashMessage')) {
     function flashMessage($message, $type = 'succes'): void
     {
         session()->flash('message', $message);
@@ -10,21 +10,21 @@ if (! function_exists('flashMessage')) {
     }
 }
 
-if (! function_exists('signatureMidtrans')) {
+if (!function_exists('signatureMidtrans')) {
     function signatureMidtrans($order_id, $status_code, $gross_amount, $server_key): string
     {
-        return hash('sha512', $order_id.$status_code.$gross_amount.$server_key);
+        return hash('sha512', $order_id . $status_code . $gross_amount . $server_key);
     }
 }
 
-if (! function_exists('activeAcademicYear')) {
+if (!function_exists('activeAcademicYear')) {
     function activeAcademicYear()
     {
         return AcademicYear::query()->where('is_active', true)->first();
     }
 }
 
-if (! function_exists('getLetterGrade')) {
+if (!function_exists('getLetterGrade')) {
     function getLetterGrade($grade): string
     {
         return match (true) {

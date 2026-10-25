@@ -11,6 +11,7 @@
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
+        "spatie/laravel-permission": "^8.3",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
@@ -24,6 +25,9 @@
         "phpunit/phpunit": "^11.5.50"
     },
     "autoload": {
+        "files" : [
+               "app/Helpers/helper.php"
+        ],
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
@@ -35,7 +39,7 @@
             "Tests\\": "tests/"
         },
         "files" : [
-            "app/Helpers/helpers.php"
+            "app/Helpers/helper.php"
         ]
     },
     "scripts": {

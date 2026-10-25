@@ -7,12 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Operator extends Model
 {
-    protected $fillable = [
-        'user_id',
-        'faculty_id',
-        'department_id',
-        'employee_number',
-    ];
+    protected $fillable = ['user_id', 'faculty_id', 'department_id', 'employee_number'];
 
     public function user(): BelongsTo
     {

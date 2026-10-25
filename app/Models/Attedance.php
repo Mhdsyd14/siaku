@@ -7,13 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Attedance extends Model
 {
-    protected $fillable = [
-        'course_id',
-        'student_id',
-        'classroom_id',
-        'status',
-        'section',
-    ];
+    protected $fillable = ['course_id', 'student_id', 'classroom_id', 'status', 'section'];
 
     public function course(): BelongsTo
     {

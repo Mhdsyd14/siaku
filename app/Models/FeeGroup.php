@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class FeeGroup extends Model
 {
-    protected $fillable = [
-        'group',
-        'amount',
-    ];
+    use HasFactory;
+    protected $fillable = ['group', 'amount'];
 }

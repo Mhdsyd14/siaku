@@ -7,13 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Teacher extends Model
 {
-    protected $fillable = [
-        'user_id',
-        'faculty_id',
-        'department_id',
-        'academic_title',
-        'teacher_number',
-    ];
+    protected $fillable = ['user_id', 'faculty_id', 'department_id', 'academic_title', 'teacher_number'];
 
     public function user(): BelongsTo
     {

@@ -9,13 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Classroom extends Model
 {
-    protected $fillable = [
-        'faculty_id',
-        'department_id',
-        'academic_year_id',
-        'name',
-        'slug',
-    ];
+    protected $fillable = ['faculty_id', 'department_id', 'academic_year_id', 'name', 'slug'];
 
     public function faculty(): BelongsTo
     {
@@ -44,13 +38,6 @@ class Classroom extends Model
 
     public function courses(): HasManyThrough
     {
-        return $this->hasManyThrough(
-            Course::class,
-            Schedule::class,
-            'classroom_id',
-            'id',
-            'id',
-            'course_id',
-        );
+        return $this->hasManyThrough(Course::class, Schedule::class, 'classroom_id', 'id', 'id', 'course_id');
     }
 }

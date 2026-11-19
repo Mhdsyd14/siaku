@@ -19,7 +19,6 @@ import { IconChevronCompactDown, IconLayoutSidebar, IconLogout2, IconX } from '@
 export default function HeaderStudentLayout({ url }) {
     const auth = usePage().props.auth.user;
     console.log(auth);
-    
 
     return (
         <>

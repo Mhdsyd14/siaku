@@ -16,11 +16,13 @@ export default function PaginationTable({ meta, links }) {
                     <PaginationPrevious className={cn('mb-1', !links.prev && 'cursor-not-allowed')} href={links.prev} />
                 </PaginationItem>
                 {meta.links.slice(1, -1).map((link, index) => {
-                    <PaginationItem key={index} className="mx-1 mb-1 lb:mb-0">
-                        <PaginationLink href={link.url} isActive={link.active}>
-                            {link.label}
-                        </PaginationLink>
-                    </PaginationItem>;
+                    return (
+                        <PaginationItem key={index} className="mx-1 mb-1 lb:mb-0">
+                            <PaginationLink href={link.url} isActive={link.active}>
+                                {link.label}
+                            </PaginationLink>
+                        </PaginationItem>
+                    );
                 })}
                 <PaginationItem>
                     <PaginationNext className={cn('mb-1', !links.next && 'cursor-not-allowed')} href={links.next} />

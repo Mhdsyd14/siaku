@@ -1,4 +1,3 @@
-import { Toaster } from '@/Components/ui/toast';
 import { Transition, Dialog } from '@headlessui/react';
 import { Head, Link, usePage } from '@inertiajs/react';
 import { Fragment, useEffect, useState } from 'react';
@@ -8,6 +7,7 @@ import { flashMessage } from '@/lib/utils';
 import { toast } from 'sonner';
 import Sidebar from './Partials/Sidebar';
 import SidebarResponsive from './Partials/SidebarResponsive';
+import { Toaster } from '@/Components/ui/sonner';
 
 export default function AppLayout({ title, children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,9 +15,13 @@ export default function AppLayout({ title, children }) {
     const auth = usePage().props.auth.user;
 
     const flash = flashMessage(usePage());
+
     useEffect(() => {
         if (flash && flash.message && flash.type === 'warning') toast[flash.type](flash.message);
     });
+
+  
+
     return (
         <>
             <Head title={title} />

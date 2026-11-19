@@ -1,7 +1,8 @@
-import { toast } from '@/Components/ui/toast';
 import { router } from '@inertiajs/react';
 import { clsx } from 'clsx';
 import { format, parseISO } from 'date-fns';
+import { id } from 'date-fns/locale';
+import { toast } from 'sonner';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs) {
@@ -16,15 +17,19 @@ export const deleteAction = (url, { closeModal, ...options } = {}) => {
     const defaultOptions = {
         preserveScroll: true,
         preserveState: true,
-        onSucces: (succes) => {
-            const flash = flashMessage(succes);
+
+        onSuccess: (page) => {
+            const flash = flashMessage(page);
+
             if (flash) {
                 toast[flash.type](flash.message);
             }
-            if (closeModal && typeof closeModal === 'function') {
+
+            if (typeof closeModal === 'function') {
                 closeModal();
             }
         },
+
         ...options,
     };
 
@@ -32,7 +37,9 @@ export const deleteAction = (url, { closeModal, ...options } = {}) => {
 };
 
 export const formatDateIndo = (dateString) => {
-    return format(parseISO(dateString), 'eeee,dd MMMM yyyy', { locale: id });
+    return format(parseISO(dateString), 'eeee, dd MMMM yyyy', {
+        locale: id,
+    });
 };
 
 export const formatToRupiah = (amount) => {
